@@ -1,15 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
-public class GOAP : SerializedMonoBehaviour
+[RequireComponent(typeof(Unit))]
+public class GOAP : MonoBehaviour
 {
-    public GoapAction rootAction;
-    
     public GoapAction currentRootAction;
     Coroutine behaviourLoop;
     
+    private Unit me;
+
+    private void Awake()
+    {
+        me = GetComponent<Unit>();
+    }
+
     public void SetBehaviour(GoapDataScriptableObject behaviourData)
     {
         if(behaviourLoop != null)
@@ -18,9 +26,9 @@ public class GOAP : SerializedMonoBehaviour
         currentRootAction = behaviourData.GetRootAction();
     }
 
-    public IEnumerator PlayTurn()
+    void Update()
     {
-        yield return currentRootAction.GetEffect().nextEffect;
+        currentRootAction?.TryEffect(me);
     }
 
     /*IEnumerator BehaviourLoop()

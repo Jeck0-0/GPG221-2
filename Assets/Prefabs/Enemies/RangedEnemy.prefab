@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5158526567727425178}
   - component: {fileID: 4057107342210513664}
   - component: {fileID: 3266796910233073533}
+  - component: {fileID: -1034071002582108285}
   m_Layer: 6
   m_Name: RangedEnemy
   m_TagString: Untagged
@@ -114,19 +115,30 @@ MonoBehaviour:
   maxHealth: 10
   isDead: 0
   isVulnerable: 1
-  OnDied:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDamaged:
-    m_PersistentCalls:
-      m_Calls: []
-  movementSpeed: 1
   weapon: {fileID: 787896803593804068}
   target: {fileID: 0}
-  visionRange: 10
-  rotationSpeedWhenIdle: 10
-  chaseSpeed: 6
-  slowWhenNearTarget: 3.5
+  defaultBehaviour: {fileID: 11400000, guid: 11c86d82d1745ad4e87dd156bf2c7a51, type: 2}
+--- !u!114 &-1034071002582108285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233379251808955609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b672a0b4a70c47a4783e88b659856122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentRootAction:
+    prerequisites: []
+    effect:
+      rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!1 &3072453276768538529
 GameObject:
   m_ObjectHideFlags: 0

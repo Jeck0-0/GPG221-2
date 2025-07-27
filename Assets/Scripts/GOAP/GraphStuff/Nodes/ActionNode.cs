@@ -20,7 +20,7 @@ public class ActionNode : GoapNode
         CreateAddPortButtons();
         AddInputPort();
         
-        Color color = Color.forestGreen;
+        Color color = new Color(.13f, .54f, .13f, 1);;
         style.borderBottomColor = color;
         style.borderTopColor = color;
         style.borderLeftColor = color;

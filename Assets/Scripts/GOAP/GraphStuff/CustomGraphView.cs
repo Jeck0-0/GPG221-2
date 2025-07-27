@@ -21,24 +21,19 @@ public class CustomGraphView : GraphView
         Insert(0, grid);
         grid.StretchToParentSize();
         
-        RegisterCallback<KeyDownEvent>(OnKeyDown, TrickleDown.TrickleDown);
         RegisterCallback<ContextualMenuPopulateEvent>(OnContextMenuPopulate);
     }
 
     
-    void OnKeyDown(KeyDownEvent args)
-    {
-        if (args.keyCode == KeyCode.Space)
-        {
-            //open node list 
-        }
-    }
-    
     private void OnContextMenuPopulate(ContextualMenuPopulateEvent evt)
     {
-        AddActionNode("GetMoney Action", new GetMoneyEffect());
-        AddActionNode("Chase Action", new ChaseUnitEffect());
-        AddPrerequisiteNode("Money Prerequisite", new MoneyCondition());
+        AddActionNode("Attack Effect", new AttackEffect());
+        AddActionNode("Chase Effect", new ChasePlayerEffect());
+        AddActionNode("Run Away Effect", new RunAwayEffect());
+        AddActionNode("Idle Effect", new IdleEffect());
+        AddPrerequisiteNode("Player Within Range Condition", new PlayerWithinRangeCondition());
+        AddPrerequisiteNode("Player Within Weapon Range Condition", new PlayerWithinWeaponRangeCondition());
+        AddPrerequisiteNode("Has Weapon Condition", new HasWeaponCondition());
         
         
         void AddActionNode(string nodeName, Effect effect)

@@ -26,6 +26,20 @@ public class Unit : Targetable
             LookAt(target.transform.position);
     }
 
+    public void MoveAwayFrom(Vector3 targetPosition, float speed)
+    {
+        var direction = (transform.position - targetPosition).normalized;
+        MoveBy(direction * (speed * Time.deltaTime));
+    }
+    public void MoveTowards(Vector3 targetPosition, float speed, float slowWhenNear = 0)
+    {
+        var direction = (targetPosition - transform.position).normalized;
+        var distance = Vector2.Distance(targetPosition, transform.position);
+        var s = speed * Mathf.Clamp01(distance/slowWhenNear);
+        var velocity = direction * s;
+        MoveBy(velocity * Time.deltaTime);
+    }
+    
     public void MoveBy(Vector2 movement)
     {
         Vector2 currentPos = new Vector2(transform.position.x, transform.position.y);

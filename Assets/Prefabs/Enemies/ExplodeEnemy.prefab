@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7649738486773732992}
   - component: {fileID: 6293605204266183072}
   - component: {fileID: 4393502271798703680}
+  - component: {fileID: 3561486359009847741}
   m_Layer: 6
   m_Name: ExplodeEnemy
   m_TagString: Untagged
@@ -114,18 +115,30 @@ MonoBehaviour:
   maxHealth: 10
   isDead: 0
   isVulnerable: 1
-  OnDied:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDamaged:
-    m_PersistentCalls:
-      m_Calls: []
   weapon: {fileID: 1383045365199592593}
   target: {fileID: 0}
-  visionRange: 10
-  rotationSpeedWhenIdle: 10
-  chaseSpeed: 6
-  slowWhenNearTarget: 3.5
+  defaultBehaviour: {fileID: 11400000, guid: 016a11d8db7e5544187cbb24f0a0f090, type: 2}
+--- !u!114 &3561486359009847741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853472667012205798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b672a0b4a70c47a4783e88b659856122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentRootAction:
+    prerequisites: []
+    effect:
+      rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!1 &5522472088595434822
 GameObject:
   m_ObjectHideFlags: 0

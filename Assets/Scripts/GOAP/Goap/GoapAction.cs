@@ -5,17 +5,13 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-
-//no world state
-//no easy way to change values (graph?)
-
 [Serializable]
 public class GoapAction
 {
     [SerializeReference, ShowInInspector] private List<Prerequisite> prerequisites;
     public List<Prerequisite> Prerequisites
     {
-        get => prerequisites; 
+        get => prerequisites;
         protected set => prerequisites = value;
     }
     
@@ -30,25 +26,25 @@ public class GoapAction
     public GoapAction(Effect effect) : this() { this.Effect = effect; }
 
     
-    public (bool success, Effect nextEffect) GetEffect()
+    public (bool playedThisAction, bool playedAnyAction) TryEffect(Unit me)
     {
         bool hasPrerequisites = true;
         foreach (var prerequisite in Prerequisites)
         {
-            var result = prerequisite.CheckPrerequisite();
+            var result = prerequisite.CheckPrerequisite(me);
+            
+            if (result.didAction)
+                return (false, true);
+            
             if (!result.met)
-            {
-                if(result.fallbackEffect != null)
-                    return (false, result.fallbackEffect);
-                
                 hasPrerequisites = false;
-            }
         }
         
         if (!hasPrerequisites) 
-            return (false, null);
+            return (false, false);
         
-        return (true, Effect);
+        effect.DoEffect(me);
+        return (true, true);
     }
 
     
@@ -72,19 +68,19 @@ public class Prerequisite
     public Prerequisite(Condition condition) : this() { this.condition = condition; }
 
 
-    public (bool met, Effect fallbackEffect) CheckPrerequisite()
+    public (bool met, bool didAction) CheckPrerequisite(Unit me)
     {
-        if (!condition.CheckCondition())
+        if (!condition.CheckCondition(me))
         {
             foreach (var b in fallbackActions)
             {
-                var result = b.GetEffect();
-                if (result.nextEffect != null)
-                    return (false, result.nextEffect);
+                var result = b.TryEffect(me);
+                if (result.playedAnyAction)
+                    return (false, true);
             }
-            return (false, null);
+            return (false, false);
         }
-        return (true, null);
+        return (true, false);
     }
 
     public void SetupNode(GoapNode node)
@@ -96,14 +92,14 @@ public class Prerequisite
 [Serializable]
 public abstract class Effect
 {
-    public abstract IEnumerator DoEffect();
+    public abstract void DoEffect(Unit me);
     public abstract void SetupNode(GoapNode node);
 }
 
 [Serializable]
 public abstract class Condition
 {
-    public virtual bool CheckCondition()
+    public virtual bool CheckCondition(Unit me)
     {
         return false;
     }

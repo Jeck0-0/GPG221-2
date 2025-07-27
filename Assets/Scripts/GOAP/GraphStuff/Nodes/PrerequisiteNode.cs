@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class PrerequisiteNode : GoapNode
 {
     protected override string outputPortName => "Fallback Action";
-    protected override Color portColor => Color.gold;
+    protected override Color portColor => new Color(1, .8f, 0, 1);
     
     public Prerequisite prerequisite;
 
@@ -18,7 +18,7 @@ public class PrerequisiteNode : GoapNode
         CreateAddPortButtons();
         AddInputPort();
         
-        Color color = Color.orange;
+        Color color = new Color(1, .6f, 0, 1);
         style.borderBottomColor = color;
         style.borderTopColor = color;
         style.borderLeftColor = color;

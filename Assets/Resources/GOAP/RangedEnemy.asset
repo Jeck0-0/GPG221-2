@@ -1,0 +1,175 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff77fda3b7a3efb47818eca301d1c7f5, type: 3}
+  m_Name: RangedEnemy
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  goapNodes:
+  - type: 1
+    position: {x: 145, y: 129}
+    GUID: 2de39960-0c7d-4656-a2ae-d49ccc856668
+    connectedNodes:
+    - 265a52ad-a591-445f-91e8-4a07de4ad813
+    - a3f56275-7006-42e3-9913-5e845b6bbdbc
+    action:
+      rid: 8288272101251744184
+    prerequisite:
+      rid: -2
+  - type: 0
+    position: {x: -22, y: 129}
+    GUID: e9ef7884-35c1-45ee-b640-e8736b79aea5
+    connectedNodes:
+    - 2de39960-0c7d-4656-a2ae-d49ccc856668
+    action:
+      rid: -2
+    prerequisite:
+      rid: -2
+  - type: 2
+    position: {x: 387, y: 57}
+    GUID: 265a52ad-a591-445f-91e8-4a07de4ad813
+    connectedNodes:
+    - e4cd4d5e-edad-4d9c-b46d-29bd958dfb17
+    action:
+      rid: -2
+    prerequisite:
+      rid: 8288272101251744185
+  - type: 2
+    position: {x: 387, y: 242}
+    GUID: a3f56275-7006-42e3-9913-5e845b6bbdbc
+    connectedNodes:
+    - cf85c585-43a1-42bf-9a28-0ae83880a563
+    action:
+      rid: -2
+    prerequisite:
+      rid: 8288272101251744186
+  - type: 1
+    position: {x: 659, y: 57}
+    GUID: e4cd4d5e-edad-4d9c-b46d-29bd958dfb17
+    connectedNodes: []
+    action:
+      rid: 8288272101251744187
+    prerequisite:
+      rid: -2
+  - type: 2
+    position: {x: 893, y: 242}
+    GUID: a257d61a-03d3-4ab9-a0ff-854c7e32d74c
+    connectedNodes:
+    - f578ab73-a469-41ea-813d-8f6626b8813b
+    action:
+      rid: -2
+    prerequisite:
+      rid: 8288272101251744188
+  - type: 1
+    position: {x: 1135, y: 242}
+    GUID: f578ab73-a469-41ea-813d-8f6626b8813b
+    connectedNodes: []
+    action:
+      rid: 8288272101251744189
+    prerequisite:
+      rid: -2
+  - type: 1
+    position: {x: 659, y: 242}
+    GUID: cf85c585-43a1-42bf-9a28-0ae83880a563
+    connectedNodes:
+    - a257d61a-03d3-4ab9-a0ff-854c7e32d74c
+    action:
+      rid: 8288272101251744190
+    prerequisite:
+      rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 8288272101251744107
+      type: {class: AttackEffect, ns: , asm: Assembly-CSharp}
+      data:
+        amount: 0
+    - rid: 8288272101251744108
+      type: {class: HasWeaponCondition, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 8288272101251744109
+      type: {class: PlayerWithinWeaponRangeCondition, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 8288272101251744110
+      type: {class: RunAwayEffect, ns: , asm: Assembly-CSharp}
+      data:
+        speed: 4
+    - rid: 8288272101251744111
+      type: {class: ChasePlayerEffect, ns: , asm: Assembly-CSharp}
+      data:
+        slowWhenNearTarget: 3
+        chaseSpeed: 7
+    - rid: 8288272101251744112
+      type: {class: PlayerWithinRangeCondition, ns: , asm: Assembly-CSharp}
+      data:
+        range: 7
+    - rid: 8288272101251744113
+      type: {class: IdleEffect, ns: , asm: Assembly-CSharp}
+      data:
+        rotationSpeed: 15
+    - rid: 8288272101251744184
+      type: {class: GoapAction, ns: , asm: Assembly-CSharp}
+      data:
+        prerequisites:
+        - rid: 8288272101251744185
+        - rid: 8288272101251744186
+        effect:
+          rid: 8288272101251744107
+    - rid: 8288272101251744185
+      type: {class: Prerequisite, ns: , asm: Assembly-CSharp}
+      data:
+        condition:
+          rid: 8288272101251744108
+        fallbackActions:
+        - rid: 8288272101251744187
+    - rid: 8288272101251744186
+      type: {class: Prerequisite, ns: , asm: Assembly-CSharp}
+      data:
+        condition:
+          rid: 8288272101251744109
+        fallbackActions:
+        - rid: 8288272101251744190
+    - rid: 8288272101251744187
+      type: {class: GoapAction, ns: , asm: Assembly-CSharp}
+      data:
+        prerequisites: []
+        effect:
+          rid: 8288272101251744110
+    - rid: 8288272101251744188
+      type: {class: Prerequisite, ns: , asm: Assembly-CSharp}
+      data:
+        condition:
+          rid: 8288272101251744112
+        fallbackActions:
+        - rid: 8288272101251744189
+    - rid: 8288272101251744189
+      type: {class: GoapAction, ns: , asm: Assembly-CSharp}
+      data:
+        prerequisites: []
+        effect:
+          rid: 8288272101251744113
+    - rid: 8288272101251744190
+      type: {class: GoapAction, ns: , asm: Assembly-CSharp}
+      data:
+        prerequisites:
+        - rid: 8288272101251744188
+        effect:
+          rid: 8288272101251744111
