@@ -26,7 +26,7 @@ public class GoapAction
     public GoapAction(Effect effect) : this() { this.Effect = effect; }
 
     
-    public (bool playedThisAction, bool playedAnyAction) TryEffect(Unit me)
+    public bool TryEffect(Unit me)
     {
         bool hasPrerequisites = true;
         foreach (var prerequisite in Prerequisites)
@@ -34,17 +34,17 @@ public class GoapAction
             var result = prerequisite.CheckPrerequisite(me);
             
             if (result.didAction)
-                return (false, true);
+                return true;
             
             if (!result.met)
                 hasPrerequisites = false;
         }
         
         if (!hasPrerequisites) 
-            return (false, false);
+            return false;
         
         effect.DoEffect(me);
-        return (true, true);
+        return true;
     }
 
     
@@ -74,8 +74,7 @@ public class Prerequisite
         {
             foreach (var b in fallbackActions)
             {
-                var result = b.TryEffect(me);
-                if (result.playedAnyAction)
+                if (b.TryEffect(me))
                     return (false, true);
             }
             return (false, false);

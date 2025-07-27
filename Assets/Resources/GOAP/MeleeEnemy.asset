@@ -23,40 +23,12 @@ MonoBehaviour:
     SerializationNodes: []
   goapNodes:
   - type: 1
-    position: {x: 145, y: 129}
-    GUID: 2de39960-0c7d-4656-a2ae-d49ccc856668
-    connectedNodes:
-    - 265a52ad-a591-445f-91e8-4a07de4ad813
-    - a3f56275-7006-42e3-9913-5e845b6bbdbc
-    action:
-      rid: 8288272101251744226
-    prerequisite:
-      rid: -2
-  - type: 0
-    position: {x: -22, y: 129}
-    GUID: e9ef7884-35c1-45ee-b640-e8736b79aea5
-    connectedNodes:
-    - 2de39960-0c7d-4656-a2ae-d49ccc856668
-    action:
-      rid: -2
-    prerequisite:
-      rid: -2
-  - type: 2
-    position: {x: 387, y: 242}
-    GUID: a3f56275-7006-42e3-9913-5e845b6bbdbc
-    connectedNodes:
-    - cf85c585-43a1-42bf-9a28-0ae83880a563
-    action:
-      rid: -2
-    prerequisite:
-      rid: 8288272101251744227
-  - type: 1
     position: {x: 659, y: 242}
     GUID: cf85c585-43a1-42bf-9a28-0ae83880a563
     connectedNodes:
     - a257d61a-03d3-4ab9-a0ff-854c7e32d74c
     action:
-      rid: 8288272101251744228
+      rid: 8288272101251744377
     prerequisite:
       rid: -2
   - type: 2
@@ -67,13 +39,22 @@ MonoBehaviour:
     action:
       rid: -2
     prerequisite:
-      rid: 8288272101251744229
+      rid: 8288272101251744378
   - type: 1
     position: {x: 1135, y: 242}
     GUID: f578ab73-a469-41ea-813d-8f6626b8813b
     connectedNodes: []
     action:
-      rid: 8288272101251744230
+      rid: 8288272101251744379
+    prerequisite:
+      rid: -2
+  - type: 1
+    position: {x: 659, y: -141}
+    GUID: e4cd4d5e-edad-4d9c-b46d-29bd958dfb17
+    connectedNodes:
+    - 0a2b1ddb-bf21-4204-a88d-d6bed6f3c6e1
+    action:
+      rid: 8288272101251744380
     prerequisite:
       rid: -2
   - type: 2
@@ -83,24 +64,24 @@ MonoBehaviour:
     action:
       rid: -2
     prerequisite:
-      rid: 8288272101251744232
-  - type: 1
-    position: {x: 659, y: -141}
-    GUID: e4cd4d5e-edad-4d9c-b46d-29bd958dfb17
-    connectedNodes:
-    - 0a2b1ddb-bf21-4204-a88d-d6bed6f3c6e1
-    action:
-      rid: 8288272101251744233
-    prerequisite:
-      rid: -2
+      rid: 8288272101251744381
   - type: 1
     position: {x: 659, y: 38}
     GUID: 402bed90-d614-4602-b511-8ff2837d1a53
     connectedNodes: []
     action:
-      rid: 8288272101251744234
+      rid: 8288272101251744382
     prerequisite:
       rid: -2
+  - type: 2
+    position: {x: 387, y: 242}
+    GUID: a3f56275-7006-42e3-9913-5e845b6bbdbc
+    connectedNodes:
+    - cf85c585-43a1-42bf-9a28-0ae83880a563
+    action:
+      rid: -2
+    prerequisite:
+      rid: 8288272101251744383
   - type: 2
     position: {x: 387, y: -54}
     GUID: 265a52ad-a591-445f-91e8-4a07de4ad813
@@ -110,7 +91,26 @@ MonoBehaviour:
     action:
       rid: -2
     prerequisite:
-      rid: 8288272101251744231
+      rid: 8288272101251744384
+  - type: 0
+    position: {x: 9, y: 121}
+    GUID: e9ef7884-35c1-45ee-b640-e8736b79aea5
+    connectedNodes:
+    - 2de39960-0c7d-4656-a2ae-d49ccc856668
+    action:
+      rid: -2
+    prerequisite:
+      rid: -2
+  - type: 1
+    position: {x: 159, y: 89}
+    GUID: 2de39960-0c7d-4656-a2ae-d49ccc856668
+    connectedNodes:
+    - 265a52ad-a591-445f-91e8-4a07de4ad813
+    - a3f56275-7006-42e3-9913-5e845b6bbdbc
+    action:
+      rid: 8288272101251744385
+    prerequisite:
+      rid: -2
   references:
     version: 2
     RefIds:
@@ -129,12 +129,12 @@ MonoBehaviour:
     - rid: 8288272101251744124
       type: {class: RunAwayEffect, ns: , asm: Assembly-CSharp}
       data:
-        speed: 7
+        speed: 5
     - rid: 8288272101251744125
       type: {class: ChasePlayerEffect, ns: , asm: Assembly-CSharp}
       data:
         slowWhenNearTarget: 2
-        chaseSpeed: 12
+        chaseSpeed: 8
     - rid: 8288272101251744126
       type: {class: PlayerWithinRangeCondition, ns: , asm: Assembly-CSharp}
       data:
@@ -143,72 +143,6 @@ MonoBehaviour:
       type: {class: IdleEffect, ns: , asm: Assembly-CSharp}
       data:
         rotationSpeed: 90
-    - rid: 8288272101251744226
-      type: {class: GoapAction, ns: , asm: Assembly-CSharp}
-      data:
-        prerequisites:
-        - rid: 8288272101251744231
-        - rid: 8288272101251744227
-        effect:
-          rid: 8288272101251744121
-    - rid: 8288272101251744227
-      type: {class: Prerequisite, ns: , asm: Assembly-CSharp}
-      data:
-        condition:
-          rid: 8288272101251744123
-        fallbackActions:
-        - rid: 8288272101251744228
-        - rid: 8288272101251744228
-    - rid: 8288272101251744228
-      type: {class: GoapAction, ns: , asm: Assembly-CSharp}
-      data:
-        prerequisites:
-        - rid: 8288272101251744229
-        effect:
-          rid: 8288272101251744125
-    - rid: 8288272101251744229
-      type: {class: Prerequisite, ns: , asm: Assembly-CSharp}
-      data:
-        condition:
-          rid: 8288272101251744126
-        fallbackActions:
-        - rid: 8288272101251744230
-        - rid: 8288272101251744230
-    - rid: 8288272101251744230
-      type: {class: GoapAction, ns: , asm: Assembly-CSharp}
-      data:
-        prerequisites: []
-        effect:
-          rid: 8288272101251744127
-    - rid: 8288272101251744231
-      type: {class: Prerequisite, ns: , asm: Assembly-CSharp}
-      data:
-        condition:
-          rid: 8288272101251744122
-        fallbackActions:
-        - rid: 8288272101251744233
-        - rid: 8288272101251744234
-        - rid: 8288272101251744233
-        - rid: 8288272101251744234
-    - rid: 8288272101251744232
-      type: {class: Prerequisite, ns: , asm: Assembly-CSharp}
-      data:
-        condition:
-          rid: 8288272101251744235
-        fallbackActions: []
-    - rid: 8288272101251744233
-      type: {class: GoapAction, ns: , asm: Assembly-CSharp}
-      data:
-        prerequisites:
-        - rid: 8288272101251744232
-        effect:
-          rid: 8288272101251744124
-    - rid: 8288272101251744234
-      type: {class: GoapAction, ns: , asm: Assembly-CSharp}
-      data:
-        prerequisites: []
-        effect:
-          rid: 8288272101251744236
     - rid: 8288272101251744235
       type: {class: PlayerWithinRangeCondition, ns: , asm: Assembly-CSharp}
       data:
@@ -217,3 +151,65 @@ MonoBehaviour:
       type: {class: IdleEffect, ns: , asm: Assembly-CSharp}
       data:
         rotationSpeed: 360
+    - rid: 8288272101251744377
+      type: {class: GoapAction, ns: , asm: Assembly-CSharp}
+      data:
+        prerequisites:
+        - rid: 8288272101251744378
+        effect:
+          rid: 8288272101251744125
+    - rid: 8288272101251744378
+      type: {class: Prerequisite, ns: , asm: Assembly-CSharp}
+      data:
+        condition:
+          rid: 8288272101251744126
+        fallbackActions:
+        - rid: 8288272101251744379
+    - rid: 8288272101251744379
+      type: {class: GoapAction, ns: , asm: Assembly-CSharp}
+      data:
+        prerequisites: []
+        effect:
+          rid: 8288272101251744127
+    - rid: 8288272101251744380
+      type: {class: GoapAction, ns: , asm: Assembly-CSharp}
+      data:
+        prerequisites:
+        - rid: 8288272101251744381
+        effect:
+          rid: 8288272101251744124
+    - rid: 8288272101251744381
+      type: {class: Prerequisite, ns: , asm: Assembly-CSharp}
+      data:
+        condition:
+          rid: 8288272101251744235
+        fallbackActions: []
+    - rid: 8288272101251744382
+      type: {class: GoapAction, ns: , asm: Assembly-CSharp}
+      data:
+        prerequisites: []
+        effect:
+          rid: 8288272101251744236
+    - rid: 8288272101251744383
+      type: {class: Prerequisite, ns: , asm: Assembly-CSharp}
+      data:
+        condition:
+          rid: 8288272101251744123
+        fallbackActions:
+        - rid: 8288272101251744377
+    - rid: 8288272101251744384
+      type: {class: Prerequisite, ns: , asm: Assembly-CSharp}
+      data:
+        condition:
+          rid: 8288272101251744122
+        fallbackActions:
+        - rid: 8288272101251744380
+        - rid: 8288272101251744382
+    - rid: 8288272101251744385
+      type: {class: GoapAction, ns: , asm: Assembly-CSharp}
+      data:
+        prerequisites:
+        - rid: 8288272101251744384
+        - rid: 8288272101251744383
+        effect:
+          rid: 8288272101251744121

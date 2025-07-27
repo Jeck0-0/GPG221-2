@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9567d066-cf6c-42c8-ab82-9d5facfd83e1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GOAP/Goap/Effects/ChasePlayerEffect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GOAP/Goap/Effects/ChasePlayerEffect.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GAD176-P1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GAD176-P1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GOAP/MeleeEnemy.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GOAP/MeleeEnemy.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/GOAP/RangedEnemy.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/GOAP/RangedEnemy.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GOAP/GoapAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GOAP/GoapAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GOAP/GraphStuff/Nodes/ActionNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GOAP/GraphStuff/Nodes/ActionNode.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +99,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1753602351313</updated>
-      <workItem from="1753602352432" duration="9334000" />
+      <workItem from="1753602352432" duration="14850000" />
     </task>
     <servers />
   </component>
